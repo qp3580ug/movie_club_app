@@ -1,0 +1,13 @@
+{% extends 'movie_club_app/base.html' %}
+
+{% block content %}
+<p>Welcome to Nate's Movie Club app.</p>
+<p>This app is used to setup a time to see a movie and go out to talk about it afterwards.</p>
+
+{% if user.is_authenticated %}
+    <p></p>
+
+{% else %}
+    <p>Please be sure that you are logged in. It is the only way to use this apps features</p>
+
+{% endblock %}

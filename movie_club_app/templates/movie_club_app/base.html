@@ -1,0 +1,27 @@
+{% load static %}
+<html>
+<head>
+  <title>Nate's Movie Club!</title>
+  <link rel="stylesheet" href="{% static 'css/base_style.css' %}"></link>
+</head>
+
+<body>
+
+<h1>Nate's Movie Club</h1>
+
+{% if user.is_authenticated %}
+  <span id='welcome_user_msg'>You are logged in, <a href="{% url 'movie_club_app:user_profile' user_pk=user.pk %}">{{ user.username }}</a>.  <a href="{% url 'movie_ckub_app:logout' %}">Logout</a></span>
+
+{% else %}
+
+  <span id='login_or_sign_up'><a href="{% url 'movie_club_app:login' %}?next={{ request.path }}">Login or sign up</a></span>
+
+{% endif %}
+
+<hr>
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>
