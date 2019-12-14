@@ -32,3 +32,11 @@ class Cafe(models.Model):
     def __str__(self):
         return 'Cafe name: {} located at {} {}, {}'.format(self.name, self.address, self.city, self.state)
 
+class Meeting(models.Model):
+    movie = models.CharField(max_length=200, blank=False, unique=True)
+    cafe = models.CharField(max_length=200, blank=False)
+    cafeAddress = models.CharField(max_length=200, blank=False)
+    time_of_meeting = models.DateTimeField(blank=False)
+
+    def __str__(self):
+        return 'On {}, we plan to meet at {}, {}, to discuss the film {}'.format(self.time_of_meeting, self.cafe, self.cafeAddress, self.movie)

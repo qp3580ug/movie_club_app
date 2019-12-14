@@ -1,10 +1,12 @@
 {% extends 'movie_club_app/base.html' %}
-
 {% block content %}
 
-{% if user.is_authenticated %}
-    <p></p>
+<h2>Enter Information for the new Meeting</h2>
 
-{% else %}
+<form method='POST' action="{% url 'movie_club_app:create_new_meeting' %}" enctype="multipart/form-data">{% csrf_token %}
+    {{ form.as_p }}
+    <P>
+    <input type='submit' value='New Meeting'>
+</form>
 
 {% endblock %}
