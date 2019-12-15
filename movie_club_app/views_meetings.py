@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from .forms import NewMeetingForm
-from django.utils import timezone
+from .models import Meeting
 
 @login_required
 def new_meeting(request):
@@ -17,3 +17,11 @@ def new_meeting(request):
     
     else :
         form = NewMeetingForm()
+
+def meeting_list(request):
+    meetings = Meeting.objects.all().order_by('time_of_meeting').reverse()
+    return render(request, 'movie_club_app/meetings/meeting_list.html', {'meetings':meetings})
+
+def meeting_details(request, meeting_pk):
+    meeting = get_object_or_404(Meeting, pk=meeting_pk)
+    return render(request, 'movie_club_app/meetings/meeting_page.html' , {'meeting' : meeting })

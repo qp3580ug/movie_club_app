@@ -2,9 +2,19 @@
 
 {% block content %}
 
-{% if user.is_authenticated %}
-    <p></p>
+{% for note in notes %}
 
-{% else %}
+<div id="meeting_{{ meeting.pk }}">
+  <h3 class="meeting_movie">{{ meeting.movie }}</h3>
+  <p class="meeting_cafe">{{ meeting.cafe }}</p>
+  <P class="meeting_cafeAddress">{{ meeting.cafeAddress }}</p>
+  <p class='date_of_meeting'>{{ meeting.date_of_meeting }}</p>
+  <hr>
+
+{% empty %}
+
+<p>No notes.</p>
+
+{% endfor %}
 
 {% endblock %}

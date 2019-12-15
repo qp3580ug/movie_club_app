@@ -1,8 +1,8 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Film, Theatre, Cafe
+from .models import Film, Cafe, Meeting
 
 admin.site.register(Film)
-admin.site.register(Theatre)
 admin.site.register(Cafe)
+admin.site.register(Meeting)

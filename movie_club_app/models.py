@@ -14,15 +14,6 @@ class Film(models.Model):
     def __str__(self):
         return "Film: " + self.title
 
-class Theatre(models.Model):
-    name = models.CharField(max_length=200, blank=False, unique=True)
-    address = models.CharField(max_length=200, blank=False)
-    city = models.CharField(max_length=200, blank=False)
-    state = models.CharField(max_length=2, blank=False)
-
-    def __str__(self):
-        return 'Theatre name: {} located at {} {}, {}'.format(self.name, self.address, self.city, self.state)
-
 class Cafe(models.Model):
     name = models.CharField(max_length=200, blank=False, unique=True)
     address = models.CharField(max_length=200, blank=False)

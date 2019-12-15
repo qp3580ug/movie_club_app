@@ -10,7 +10,7 @@ from .models import Meeting
 class NewMeetingForm(forms.ModelForm):
     class Meta:
         model = Meeting
-        fields = ('movie', 'cafe', 'cafeAddress', 'date_of_meeting')
+        fields = ('movie', 'cafe', 'cafeAddress', 'time_of_meeting')
 
 
 class UserRegistrationForm(UserCreationForm):
