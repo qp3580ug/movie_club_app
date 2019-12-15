@@ -1,0 +1,17 @@
+{% extends 'movie_club_app/base.html' %}
+
+{% block content %}
+
+<h2>Cafes near Chaska</h2>
+
+{% for cafe in cafes %}
+<div class="cafe" id="cafe_{{ cafe.pk }}">
+<P>{{ cafe.name }}, located at {{ cafe.cafeAddress }}, {{cafe.city}}</p>
+<div>
+
+{% empty %}
+<P>No cafes near Chaska</P>
+
+{% endfor %}
+
+{% endblock %}

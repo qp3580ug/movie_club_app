@@ -2,9 +2,25 @@
 
 {% block content %}
 
-{% if user.is_authenticated %}
-    <p></p>
+<h2>Film Search</h2>
 
-{% else %}
+<P>Search</p>
+  <form action="{% url 'movie_club_app:film_list' %}">
+    {{ form }}
+    <input type='submit' value='Search'>
+  </form>
+
+<h2 id='film_title'>Films matching '{{ search_term }}' <a href="{% url 'movie_club_app:film_list' %}" id='clear_search'>(clear)</a></h2>
+
+
+{% for film in films %}
+<div class="film" id="film_{{ film.pk }}">
+<P><a href="{% url 'film:film_page' film_pk=film.pk %}">{{ film.title }}</a></p>
+<div>
+
+{% empty %}
+<P>No films found</P>
+
+{% endfor %}
 
 {% endblock %}
