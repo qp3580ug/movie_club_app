@@ -13,10 +13,12 @@ def new_meeting(request):
         if form.is_valid():
             meeting = form.save(commit=False)
             meeting.save()
-            return redirect('movie_club_app:meeting_page', meeting_pk=meeting.pk)
+            return redirect('movie_club_app:meeting_list', meeting_pk=meeting.pk)
     
     else :
         form = NewMeetingForm()
+
+    return render(request, 'movie_club_app/meetings/create_new_meeting.html' , { 'form' : form })
 
 def meeting_list(request):
     meetings = Meeting.objects.all().order_by('time_of_meeting').reverse()
@@ -25,3 +27,9 @@ def meeting_list(request):
 def meeting_details(request, meeting_pk):
     meeting = get_object_or_404(Meeting, pk=meeting_pk)
     return render(request, 'movie_club_app/meetings/meeting_page.html' , {'meeting' : meeting })
+
+@login_required
+def delete_meeting(request, meeting_pk):
+    meeting = get_object_or_404(Meeting, pk=meeting_pk)
+    meeting.delete()
+    return redirect('movie_club_app:meeting_list')

@@ -1,0 +1,11 @@
+{% extends 'movie_club_app/base.html' %}
+{% block content %}
+
+<h2>Enter Film info and what the group rated it</h2>
+
+<form method='POST' action="{% url 'movie_club_app:add_film' %}" enctype="multipart/form-data">{% csrf_token %}
+    {{ form.as_p }}
+    <input type='submit' value='Add Film'>
+</form>
+
+{% endblock %}

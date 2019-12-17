@@ -6,7 +6,7 @@
 
 {% for cafe in cafes %}
 <div class="cafe" id="cafe_{{ cafe.pk }}">
-<P>{{ cafe.name }}, located at {{ cafe.cafeAddress }}, {{cafe.city}}</p>
+<P>{{ cafe.name }}, located at {{ cafe.address }}</p>
 <div>
 
 {% empty %}

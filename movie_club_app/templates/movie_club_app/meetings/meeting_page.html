@@ -2,9 +2,13 @@
 
 {% block content %}
 
-{% if user.is_authenticated %}
-    <p></p>
+<h1>Meeting for the film {{ meeting.movie }}</h1>
 
-{% else %}
+<p>We will meet at {{ meeting.cafe }}, located at {{ meeting.cafeAddress }}.</p>
+<p>This meeting will take place on {{ meeting.time_of_meeting }}.</p>
+
+{% if user.is_authenticated %}
+<a href="{% url 'movie_club_app:delete_meeting' meeting_pk=meeting.pk %}">Delete</a>
+{% endif %} 
 
 {% endblock %}

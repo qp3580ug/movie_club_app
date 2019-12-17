@@ -7,10 +7,15 @@
 
 <body>
 
-<h1>Nate's Movie Club</h1>
+<h1 id="title">Nate's Movie Club</h1>
+
+<a href="{% url 'movie_club_app:homepage' %}">Home</a>
+<a href="{% url 'movie_club_app:film_list' %}">NMC's Films Watched</a>
+<a href="{% url 'movie_club_app:cafe_list' %}">Cafe Search</a>
+<a href="{% url 'movie_club_app:meeting_list' %}">Meetings</a>
 
 {% if user.is_authenticated %}
-  <span id='welcome_user_msg'>You are logged in, <a href="{% url 'movie_club_app:user_profile' user_pk=user.pk %}">{{ user.username }}</a>.  <a href="{% url 'movie_ckub_app:logout' %}">Logout</a></span>
+  <span id='welcome_user_msg'>You are logged in, <a href="{% url 'movie_club_app:user_profile' user_pk=user.pk %}">{{ user.username }}</a>.  <a href="{% url 'movie_club_app:logout' %}">Logout</a></span>
 
 {% else %}
 

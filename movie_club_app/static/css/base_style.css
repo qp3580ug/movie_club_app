@@ -1,0 +1,17 @@
+#title {
+    color: blue;
+    text-align: center;
+    margin: auto;
+}
+
+body {
+    background-color: darkgoldenrod;
+}
+
+#login_or_sign_up {
+    text-align: right;
+}
+
+#welcome_user_msg {
+    text-align: right;
+}

@@ -11,6 +11,7 @@ User._meta.get_field('first_name')._blank = False
 class Film(models.Model):
     title = models.CharField(max_length=200, blank=False)
     synopsis = models.CharField(max_length=500, blank=False)
+    rating = models.CharField(max_length=1, blank=False)
 
     def __str__(self):
         return "Film: " + self.title

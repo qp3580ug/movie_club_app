@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views, views_users, views_meetings, views_films
+from . import views, views_users, views_meetings, views_films, views_cafes
 
 from django.contrib.auth import views as auth_views
 
@@ -17,13 +17,15 @@ urlpatterns = [
     path('accounts/logout/', auth_views.LogoutView.as_view(template_name='registration/logout.html'), name='logout'),
     path('register/', views_users.register, name='register'),
 
-    path('films/details/', views_films.film_details, name='film_page'),
+    path('films/page/<int:film_pk>/', views_films.film_details, name='film_page'),
     path('films/list/', views_films.film_list, name='film_list'),
-    path('films/top/', views_films.top_films, name='top_films'),
+    path('films/add/', views_films.add_film, name='add_film'),
 
-    path('meetings/new/', views_meetings.new_meeting.as_view(template_name='meetings/create_new_meeting.html'), name='create_new_meeting'),
-    path('meetings/details/', views_meetings.meeting_details, name='meeting_page'),
-    path('meetings/list/', views_meetings.meeting_list, name='meeting_list')
+    path('meetings/new/', views_meetings.new_meeting, name='create_new_meeting'),
+    path('meetings/detail/<int:meeting_pk>/', views_meetings.meeting_details, name='meeting_page'),
+    path('meetings/list/', views_meetings.meeting_list, name='meeting_list'),
+    path('meetings/delete/<int:meeting_pk>', views_meetings.delete_meeting, name='delete_meeting'),
 
+    path('cafes/list/', views_cafes.cafe_list, name='cafe_list')
      
 ]

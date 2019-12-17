@@ -13,7 +13,7 @@ def searchYelp(self, zip_code):
             'categories': 'coffee',
             'location': '55318',
             'radius': '1000',
-            'limit': 10,
+            'limit': 20,
             'sort_by': 'distance'
         }
 
@@ -26,5 +26,5 @@ def searchYelp(self, zip_code):
             location = c['location']
             address = ','.join(location['display_address'])
 
-            Cafe.name.add(name)
-            Cafe.address.add(address)
+            if address not in Cafe.address:
+                Cafe.add(name = name, address = address)
