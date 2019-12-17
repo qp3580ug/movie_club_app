@@ -3,7 +3,7 @@ attrs==19.3.0
 Automat==0.8.0
 colorama==0.4.3
 constantly==15.1.0
-Django==2.2.7
+Django==2.2.8
 hyperlink==19.0.0
 idna==2.8
 incremental==17.5.0
