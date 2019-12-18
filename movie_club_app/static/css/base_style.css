@@ -1,10 +1,11 @@
 #title {
-    color: white;
+    color: red;
     text-align: center;
-    font-size: xx-large;
+    font-size: 72px;
+    font-weight: bolder;
     background-image: url('../img/moviecoffee.jpg');
     background-size: 175px;
-    padding: 40px 0 40px 0px;
+    padding: 15px 0 15px 0px;
 }
 
 body {
@@ -43,4 +44,20 @@ body {
 
 #filmTitle {
     background-color: white;
+}
+
+#updateCafes {
+    background-color: lime;
+}
+
+#newMeeting {
+    background-color: blanchedalmond;
+}
+
+#meetingPage {
+    background-color: yellowgreen;
+}
+
+#deleteMeeting {
+    background-color: violet;
 }

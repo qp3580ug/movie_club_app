@@ -8,7 +8,7 @@
 <p>This meeting will take place on {{ meeting.time_of_meeting }}.</p>
 
 {% if user.is_authenticated %}
-<a href="{% url 'movie_club_app:delete_meeting' meeting_pk=meeting.pk %}">Delete</a>
+<a href="{% url 'movie_club_app:delete_meeting' meeting_pk=meeting.pk %}" id="deleteMeeting">Delete</a>
 {% endif %} 
 
 {% endblock %}
