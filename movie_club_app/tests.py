@@ -3,6 +3,7 @@ from django.test import TestCase
 from .models import Film, Meeting
 from .forms import AddFilmForm, NewMeetingForm, UpdateCafes
 from django.db import IntegrityError
+from django.urls import reverse
 
 class TestForms(TestCase):
 
@@ -31,3 +32,12 @@ class TestModels(TestCase):
         film2 = Film(title='Terminator', synopsis='Test Synopsis 2', rating='3')
         with self.assertRaises(IntegrityError):
             film2.save()
+
+class TestViews(TestCase):
+    def test_results_for_film_search(self):
+            response = self.client.get( reverse('movie_club_app:film_list') , {'search_name' : 'Psycho'} )
+            self.assertNotContains(response, 'Terminator')
+            self.assertNotContains(response, 'The Grinch')
+            self.assertNotContains(response, 'Scott Pilgrim vs. The World')
+            self.assertEqual(len(response.context['films']), 0)
+            self.assertTemplateUsed(response, 'movie_club_app/Films/film_list.html')
