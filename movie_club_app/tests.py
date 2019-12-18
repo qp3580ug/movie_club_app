@@ -2,6 +2,7 @@ from django.test import TestCase
 from .models import Film, Meeting
 from .forms import AddFilmForm, NewMeetingForm, UpdateCafes
 from django.db import IntegrityError
+from . import views_meetings
 
 class TestForms(TestCase):
 
@@ -19,7 +20,7 @@ class TestForms(TestCase):
         cafe_data = {'name': 'test cafe', 'address': '321 test Ave'}
         form = UpdateCafes(cafe_data)
         self.assertTrue(form.is_valid())
-        
+
 class TestModels(TestCase):
 
     def test_duplicate_films_fails(self):
@@ -38,3 +39,4 @@ class TestViews(TestCase):
         meeting = Meeting(movie='Test Film', cafe='Coffee Testers', cafeAddress='321 Test Ave', time_of_meeting='12')
         meeting.save()
 
+        

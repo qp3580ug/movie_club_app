@@ -12,4 +12,5 @@ def cafe_list(request):
 
 def update_cafes(request):
     searchYelp()
-    return redirect('movie_club_app:cafe_list')
+    cafes = Cafe.objects.all()
+    return render(request, 'movie_club_app/cafes/cafe_list.html', {'cafes': cafes})

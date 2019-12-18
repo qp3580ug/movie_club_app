@@ -2,6 +2,7 @@ from django.db import models
 from .models import Cafe
 from django.http import HttpResponse
 import requests
+from django.shortcuts import redirect
 
 
 def searchYelp():
@@ -28,6 +29,8 @@ def searchYelp():
         location = c['location']
         address = ','.join(location['display_address'])
         
-        Cafe.objects.create(name=name, address=address)
+        Cafe.objects.create(name = name, address = address)
         '''cafe = Cafe(name = name, address = address)
         cafe.save()'''
+    
+    return redirect('movie_club_app:homepage')
