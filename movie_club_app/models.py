@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 import datetime
-import requests
 
 User._meta.get_field('email')._unique = True
 
@@ -13,12 +12,12 @@ class Film(models.Model):
     title = models.CharField(max_length=200, blank=False, unique=True)
     synopsis = models.CharField(max_length=500, blank=False)
     rating = models.CharField(max_length=1, blank=False)
-    
+
     def __str__(self):
         return "Film: " + self.title
 
 class Cafe(models.Model):
-    name = models.CharField(max_length=200, blank=False, unique=True)
+    name = models.CharField(max_length=200, blank=False)
     address = models.CharField(max_length=200, blank=False)
 
     def __str__(self):

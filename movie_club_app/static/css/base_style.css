@@ -10,8 +10,14 @@ body {
 
 #login_or_sign_up {
     text-align: right;
+    background-color: deeppink;
 }
 
 #welcome_user_msg {
     text-align: right;
+    background-color: deeppink;
+}
+
+#home {
+    background-color: white;
 }
