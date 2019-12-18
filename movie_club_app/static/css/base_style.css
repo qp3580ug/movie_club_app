@@ -21,13 +21,13 @@ body {
 #login_or_sign_up {
     border-style: outset;
     border-color: teal;
-    background-color: deeppink;
+    background-color: rgb(253, 91, 177);
     padding-right: 25px;
     padding-left: 25px;
 }
 
 #welcome_user_msg {
-    background-color: deeppink;
+    background-color: rgb(253, 91, 177);
     padding-right: 25px;
     padding-left: 25px;
     border-style: outset;
@@ -68,24 +68,64 @@ body {
 
 #newFilm {
     background-color: moccasin;
+    border-style: outset;
+    border-color: darkslateblue;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 
 #filmTitle {
     background-color: white;
+    border-style: outset;
+    border-color: firebrick;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 
 #updateCafes {
     background-color: lime;
+    border-style: outset;
+    border-color: blue;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 
 #newMeeting {
     background-color: blanchedalmond;
+    border-style: outset;
+    border-color: seagreen;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 
 #meetingPage {
     background-color: yellowgreen;
+    border-style: outset;
+    border-color: crimson;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 
 #deleteMeeting {
     background-color: violet;
+    border-style: outset;
+    border-color: navy;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.meetingInfo {
+    background-color: darkturquoise;
 }

@@ -8,12 +8,12 @@
 
 {% for meeting in meetings %}
 
-<div id="meeting_{{ meeting.pk }}">
+<div id="meeting_{{ meeting.pk }}" class="meetingInfo">
   <h3 class="meeting_movie">{{ meeting.movie }}</h3>
   <p class="meeting_cafe">{{ meeting.cafe }}</p>
   <P class="meeting_cafeAddress">{{ meeting.cafeAddress }}</p>
   <p class='time_of_meeting'>{{ meeting.time_of_meeting }}</p>
-  <a href="{% url 'movie_club_app:meeting_page' meeting_pk=meeting.pk %}" id='meetingPage'>Go to Meeting Page, to Edit or Delete</a>
+  <a href="{% url 'movie_club_app:meeting_page' meeting_pk=meeting.pk %}" id='meetingPage'>Click here to go to this meeting's page</a>
   <hr>
 
 {% empty %}
