@@ -11,6 +11,9 @@ def cafe_list(request):
     return render(request, 'movie_club_app/cafes/cafe_list.html', {'cafes': cafes })
 
 def update_cafes(request):
-    searchYelp()
-    cafes = Cafe.objects.all()
-    return render(request, 'movie_club_app/cafes/cafe_list.html', {'cafes': cafes})
+    try:
+        searchYelp()
+        cafes = Cafe.objects.all()
+        return render(request, 'movie_club_app/cafes/cafe_list.html', {'cafes': cafes})
+    except:
+        return redirect('movie_club_app:cafe_list')

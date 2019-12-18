@@ -1,7 +1,10 @@
 #title {
-    color: blue;
+    color: white;
     text-align: center;
-    margin: auto;
+    font-size: xx-large;
+    background-image: url('../img/moviecoffee.jpg');
+    background-size: 175px;
+    padding: 40px 0 40px 0px;
 }
 
 body {
@@ -32,4 +35,12 @@ body {
 
 #meetings {
     background-color: palegreen;
+}
+
+#newFilm {
+    background-color: moccasin;
+}
+
+#filmTitle {
+    background-color: white;
 }

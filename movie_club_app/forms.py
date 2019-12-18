@@ -22,6 +22,9 @@ class UpdateCafes(forms.ModelForm):
         model = Cafe
         fields = ('name', 'address')
 
+class FilmSearchForm(forms.Form):
+    search_name = forms.CharField(label='Film Title', max_length=200)
+
 
 class UserRegistrationForm(UserCreationForm):
 
