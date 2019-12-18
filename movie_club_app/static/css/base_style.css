@@ -21,3 +21,15 @@ body {
 #home {
     background-color: white;
 }
+
+#films {
+    background-color: yellow;
+}
+
+#cafes {
+    background-color: turquoise;
+}
+
+#meetings {
+    background-color: palegreen;
+}
