@@ -4,7 +4,7 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth.models import User
 from django.forms import ValidationError
 
-from .models import Meeting, Film
+from .models import Meeting, Film, Cafe
 
 
 class NewMeetingForm(forms.ModelForm):
@@ -16,6 +16,11 @@ class AddFilmForm(forms.ModelForm):
     class Meta:
         model = Film
         fields = ('title', 'synopsis', 'rating')
+
+class UpdateCafes(forms.ModelForm):
+    class Meta:
+        model = Cafe
+        fields = ('name', 'address')
 
 
 class UserRegistrationForm(UserCreationForm):

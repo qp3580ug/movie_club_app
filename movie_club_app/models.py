@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 import datetime
+import requests
 
 User._meta.get_field('email')._unique = True
 
@@ -9,7 +10,7 @@ User._meta.get_field('last_name')._blank = False
 User._meta.get_field('first_name')._blank = False
 
 class Film(models.Model):
-    title = models.CharField(max_length=200, blank=False)
+    title = models.CharField(max_length=200, blank=False, unique=True)
     synopsis = models.CharField(max_length=500, blank=False)
     rating = models.CharField(max_length=1, blank=False)
 

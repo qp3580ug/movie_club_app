@@ -1,30 +1,33 @@
 from django.db import models
-import requests
 from .models import Cafe
+from django.http import HttpResponse
+import requests
 
-def searchYelp(self, zip_code):
-        YELP_API_KEY = 'f3n-U3oZBl9eE1_a6_PNLZjs0Phcgs0zQDdaVvuMYq8dBntIB1h5yU9b2-xqBb-FD_i3gPqWY0Mx-BkkITo-V8uQ2LQ5cTXyFAiGn57FuHeSmoMBJFDJ3HwGRumoXXYx'
 
-        yelp_url = 'https://api.yelp.com/v3/businesses/search'
+def searchYelp():
+    YELP_API_KEY = 'f3n-U3oZBl9eE1_a6_PNLZjs0Phcgs0zQDdaVvuMYq8dBntIB1h5yU9b2-xqBb-FD_i3gPqWY0Mx-BkkITo-V8uQ2LQ5cTXyFAiGn57FuHeSmoMBJFDJ3HwGRumoXXYx'
 
-        headers = {'Authorization': 'Bearer ' + YELP_API_KEY}
+    yelp_url = 'https://api.yelp.com/v3/businesses/search'
 
-        params = {
-            'categories': 'coffee',
-            'location': '55318',
-            'radius': '1000',
-            'limit': 20,
-            'sort_by': 'distance'
-        }
+    headers = {'Authorization': 'Bearer ' + YELP_API_KEY}
 
-        response = requests.get(yelp_url, headers=headers, params=params).json()
+    params = {
+        'categories': 'coffee',
+        'location': '55318',
+        'radius': '1000',
+        'limit': 20,
+        'sort_by': 'distance'
+    }
 
-        coffee_shops = response['businesses']
+    response = requests.get(yelp_url, headers=headers, params=params).json()
 
-        for c in coffee_shops:
-            name = c['name']
-            location = c['location']
-            address = ','.join(location['display_address'])
+    coffee_shops = response['businesses']
 
-            if address not in Cafe.address:
-                Cafe.add(name = name, address = address)
+    for c in coffee_shops:
+        name = c['name']
+        location = c['location']
+        address = ','.join(location['display_address'])
+        
+        Cafe.objects.create(name=name, address=address)
+        '''cafe = Cafe(name = name, address = address)
+        cafe.save()'''

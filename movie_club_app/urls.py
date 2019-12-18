@@ -26,6 +26,7 @@ urlpatterns = [
     path('meetings/list/', views_meetings.meeting_list, name='meeting_list'),
     path('meetings/delete/<int:meeting_pk>', views_meetings.delete_meeting, name='delete_meeting'),
 
-    path('cafes/list/', views_cafes.cafe_list, name='cafe_list')
+    path('cafes/list/', views_cafes.cafe_list, name='cafe_list'),
+    path('cafes/update/', views_cafes.update_cafes, name='update_cafes')
      
 ]

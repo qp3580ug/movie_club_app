@@ -4,6 +4,8 @@
 
 <h2>Cafes near Chaska</h2>
 
+<a href="{% url 'movie_club_app:update_cafes' %}">Update Cafes</a>
+
 {% for cafe in cafes %}
 <div class="cafe" id="cafe_{{ cafe.pk }}">
 <P>{{ cafe.name }}, located at {{ cafe.address }}</p>
