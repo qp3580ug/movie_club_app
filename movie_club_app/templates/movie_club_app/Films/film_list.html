@@ -4,18 +4,13 @@
 
 <h1>Films we have watched</h1>
 
-<P>Film Search</p>
-    <form action="{% url 'movie_club_app:film_list' %}">
-      {{ form }}
-      <input type='submit' value='Search'>
-    </form>
-  
-  
-  {% if search_term %}
-    <h2 id='film_list_names'>Films we've watched matching '{{ search_term }}' <a href="{% url 'movie_club_app:film_list' %}" id='clear_search'>(clear)</a></h2>
-  {% else %}
-    <h2 id='film_list_names'>All Films We've Watched</h2>
-  {% endif %}
+<div id="searchForm">
+  <P>Search our list of Films we have watched!!</p>
+      <form action="{% url 'movie_club_app:film_list' %}">
+        {{ form }}
+        <input type='submit' value='Search'>
+      </form>
+</div>
 
 <a href="{% url 'movie_club_app:add_film' %}" id='newFilm'>Add New Film</a>
 

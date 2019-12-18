@@ -12,30 +12,58 @@ body {
     background-color: darkgoldenrod;
 }
 
+#searchForm {
+    border-style: inset;
+    border-color: royalblue;
+    background-color: limegreen;
+}
+
 #login_or_sign_up {
-    text-align: right;
+    border-style: outset;
+    border-color: teal;
     background-color: deeppink;
+    padding-right: 25px;
+    padding-left: 25px;
 }
 
 #welcome_user_msg {
-    text-align: right;
     background-color: deeppink;
+    padding-right: 25px;
+    padding-left: 25px;
+    border-style: outset;
+    border-color: teal;
 }
 
 #home {
     background-color: white;
+    padding-right: 25px;
+    padding-left: 25px;
+    border-style: outset;
+    border-color: teal;
 }
 
 #films {
     background-color: yellow;
+    padding-right: 25px;
+    padding-left: 25px;
+    border-style: outset;
+    border-color: teal;
 }
 
 #cafes {
     background-color: turquoise;
+    padding-right: 25px;
+    padding-left: 25px;
+    border-style: outset;
+    border-color: teal;
 }
 
 #meetings {
     background-color: palegreen;
+    padding-right: 25px;
+    padding-left: 25px;
+    border-style: outset;
+    border-color: teal;
 }
 
 #newFilm {

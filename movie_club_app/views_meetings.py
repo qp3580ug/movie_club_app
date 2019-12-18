@@ -13,7 +13,7 @@ def new_meeting(request):
         if form.is_valid():
             meeting = form.save(commit=False)
             meeting.save()
-            return redirect('movie_club_app:meeting_list', meeting_pk=meeting.pk)
+            return redirect('movie_club_app:meeting_list')
     
     else :
         form = NewMeetingForm()

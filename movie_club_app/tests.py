@@ -1,3 +1,4 @@
+import unittest
 from django.test import TestCase
 from .models import Film, Meeting
 from .forms import AddFilmForm, NewMeetingForm, UpdateCafes
