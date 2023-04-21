@@ -14,7 +14,7 @@ PyHamcrest==1.9.0
 pylint==2.4.4
 pytz==2019.3
 six==1.13.0
-sqlparse==0.3.0
+sqlparse==0.4.4
 wrapt==1.11.2
 zope.interface==4.7.1
 certifi-2019.11.28 
